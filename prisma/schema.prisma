@@ -14,8 +14,14 @@ model User {
   emailVerified DateTime?
   image         String?
   password      String?
+  role          Role      @default(USER)
   accounts      Account[]
   sessions      Session[]
+}
+
+enum Role {
+  USER
+  ADMIN
 }
 
 model Account {
